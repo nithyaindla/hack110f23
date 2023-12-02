@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    --<head>
+        <link rel='stylesheet' href='/static/style.css' />.
+        <title>Im yay!</title>
+        <h1>what's my mood??</h1>
+    </head>
+        <style>
+            /* Center the image */
+            #emotionImage {
+            display: block;
+            margin: -350px auto 0;
+            max-width: 100%;
+            }
+        </style>
+    <section>
+        <body>
+                <button class ="circular-button" id='circular-button' "submit" style="color: tan" onClick="changeEmotion()"></button>
+                <img id="emotionImage" src="" style="max-width: 16%;">
+
+            <script>
+                function changeEmotion() {
+                    // List of emotions (replace this with your actual list)
+                    var emotions = ['Joy', 'Sadness', 'Anger', 'Disgust', 'Fear'];
+
+                    // Randomly choose an emotion
+                    var randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
+
+                    // Update the color based on the selected emotion
+                    var paragraph = document.getElementById('circular-button');
+                    var image = document.getElementById('emotionImage');
+                    switch (randomEmotion) {
+                        case 'Joy':
+                            paragraph.style.backgroundColor = '#E6D663';
+                            image.src = "static/joy.png";
+                            break;
+                        case 'Sadness':
+                            paragraph.style.backgroundColor = '#99B6C6';
+                            image.src = 'static/sadness.png'
+                            break;
+                        case 'Anger':
+                            paragraph.style.backgroundColor = '#BD3214';
+                            image.src = 'static/anger.png'
+                            break;
+                        case 'Disgust':
+                            paragraph.style.backgroundColor = '#127937';
+                            image.src = 'static/disgust.png'
+                            break;
+                        case 'Fear':
+                            paragraph.style.backgroundColor = '#65408E';
+                            image.src = 'static/fear.png'
+                            break;
+                        default:
+                            image.src = ""
+                        }
+                    }
+            </script>
+        </body>
+    </section>
+</html>
